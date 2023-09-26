@@ -13,6 +13,12 @@ using namespace AlibabaCloud::OSS;
 #undef GetObject
 #undef CreateDirectory
 
+// ÃÌº”“¿¿µø‚
+#pragma comment(lib, "ws2_32.lib")
+#pragma comment(lib, "crypt32.lib")
+#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "wldap32.lib")
+
 std::string& replace_str(std::string& str, const std::string& to_replaced, const std::string& newchars)
 {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newchars.length())

@@ -23,7 +23,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1A639D91-8697-3FD2-9C34-31F2FA0AABE7}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>cpp-sdk-sample</ProjectName>
@@ -103,7 +103,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions);WIN32;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -120,7 +120,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Debug\alibabacloud-oss-cpp-sdk.lib;..\..\third_party\lib\x64\ssleay32.lib;..\..\third_party\lib\x64\libeay32.lib;..\..\third_party\lib\x64\libcurl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\Debug\alibabacloud-oss-cpp-sdk.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mtd.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mtd.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mtd.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mtd.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mtd.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mtd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -147,7 +147,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
@@ -166,7 +166,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\lib\Release\alibabacloud-oss-cpp-sdk.lib;..\..\third_party\lib\x64\ssleay32.lib;..\..\third_party\lib\x64\libeay32.lib;..\..\third_party\lib\x64\libcurl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\Release\alibabacloud-oss-cpp-sdk.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mt.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mt.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mt.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mt.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mt.lib;E:\kSource\pythonx\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -187,7 +187,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <Optimization>MinSpace</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>

@@ -32,12 +32,12 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
@@ -61,13 +61,13 @@
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cpp-sdk-sample.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cpp-sdk-sample</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">infossd</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cpp-sdk-sample.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cpp-sdk-sample</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">infoss</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
@@ -83,6 +83,9 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -323,8 +326,27 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\base64.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cargs.c" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\funclib.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\KMD5.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\mytools.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\zfile.cpp" />
     <ClCompile Include="..\..\sample\src\Config.cc" />
     <ClCompile Include="infoss.cpp" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\base64.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cargs.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\funclib.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\json.hpp" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KLocker.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KMD5.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KSingle.hpp" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\mytools.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\myzlib.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\ThreadPool.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\zfile.h" />
     <ClInclude Include="..\..\sample\src\Config.h" />
     <ClInclude Include="infoss.h" />
     <None Include="..\..\sample\src\LiveChannel">

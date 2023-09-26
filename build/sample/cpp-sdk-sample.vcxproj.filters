@@ -26,6 +26,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="infoss.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cargs.c">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\base64.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\funclib.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\KMD5.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\mytools.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\zfile.cpp">
+      <Filter>cppx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sample\src\Config.h">
@@ -50,6 +71,42 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="infoss.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\json.hpp">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KSingle.hpp">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\base64.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cargs.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\funclib.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KLocker.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\KMD5.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\mytools.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\myzlib.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\ThreadPool.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\zfile.h">
+      <Filter>cppx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\sample\CMakeLists.txt" />
@@ -68,6 +125,9 @@
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{84982DD7-E3E6-36F9-80C5-7300A27E65DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppx">
+      <UniqueIdentifier>{4e57cf04-892d-4bba-bf92-78a5ea847437}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

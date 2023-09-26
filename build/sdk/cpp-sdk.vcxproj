@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{43789F83-C8F4-307D-9F49-74901E302108}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>cpp-sdk</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cpp-sdk.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">alibabacloud-oss-cpp-sdk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cpp-sdk.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">alibabacloud-oss-cpp-sdk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">..\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">cpp-sdk.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">alibabacloud-oss-cpp-sdk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">..\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">cpp-sdk.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">alibabacloud-oss-cpp-sdk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\sdk\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule ../../sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\..\..\..\dist\vcxmake.exe -S../.. -B.. --check-stamp-file CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule ../../sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\..\..\..\dist\vcxmake.exe -S../.. -B.. --check-stamp-file CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule ../../sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\..\..\..\dist\vcxmake.exe -S../.. -B.. --check-stamp-file CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule ../../sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\..\..\..\dist\vcxmake.exe -S../.. -B.. --check-stamp-file CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\Config.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\Const.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\Export.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\Global.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssClient.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssEncryptionClient.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssError.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssFwd.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssResponse.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\OssResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\ServiceRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\ServiceResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\Types.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\auth\Credentials.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\auth\CredentialsProvider.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\client\AsyncCallerContext.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\client\ClientConfiguration.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\client\Error.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\client\RateLimiter.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\client\RetryStrategy.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\encryption\Cipher.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\encryption\ContentCryptoMaterial.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\encryption\CryptoConfiguration.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\encryption\EncryptionMaterials.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\HttpClient.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\HttpMessage.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\HttpRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\HttpResponse.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\HttpType.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\http\Url.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\AbortBucketWormRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\AbortMultipartUploadRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\AppendObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\AppendObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\Bucket.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CORSRule.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CompleteBucketWormRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CompleteMultipartUploadRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CompleteMultipartUploadResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CopyObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CopyObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CreateBucketRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CreateSelectObjectMetaRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CreateSelectObjectMetaResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CreateSymlinkRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\CreateSymlinkResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketCorsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketEncryptionRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketInventoryConfigurationRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketLifecycleRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketLoggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketPolicyRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketQosInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteBucketWebsiteRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteLiveChannelRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectTaggingResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectVersionsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectVersionsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DeleteObjectsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\DownloadObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ExtendBucketWormRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GeneratePresignedUrlRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GenerateRTMPSignedUrlRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketAclRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketAclResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketCorsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketCorsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketEncryptionRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketEncryptionResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketInfoResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketInventoryConfigurationRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketInventoryConfigurationResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLifecycleRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLifecycleResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLocationRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLocationResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLoggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketLoggingResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketPaymentRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketPaymentResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketPolicyRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketPolicyResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketQosInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketQosInfoResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketRefererRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketRefererResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketStatRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketStatResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketStorageCapacityRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketStorageCapacityResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketTaggingResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketVersioningRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketVersioningResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketWebsiteRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketWebsiteResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketWormRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetBucketWormResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelHistoryRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelHistoryResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelInfoResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelStatRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetLiveChannelStatResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectAclRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectAclResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectByUrlRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectMetaRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetObjectTaggingResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetSymlinkRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetSymlinkResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetUserQosInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetUserQosInfoResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetVodPlaylistRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\GetVodPlaylistResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\HeadObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InitiateBucketWormRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InitiateBucketWormResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InitiateMultipartUploadRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InitiateMultipartUploadResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InputFormat.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\InventoryConfiguration.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\LifecycleRule.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListBucketInventoryConfigurationsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListBucketInventoryConfigurationsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListBucketsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListBucketsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListLiveChannelRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListLiveChannelResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListMultipartUploadsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListMultipartUploadsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectVersionsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectVersionsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectsV2Request.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListObjectsV2Result.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListPartsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ListPartsResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\MultiCopyObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\MultipartUploadCryptoContext.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ObjectCallbackBuilder.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ObjectMetaData.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\OutputFormat.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\Owner.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\Part.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PostVodPlaylistRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\ProcessObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutLiveChannelRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutLiveChannelResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutLiveChannelStatusRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutObjectByUrlRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\PutObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\QosConfiguration.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\RestoreObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\RestoreObjectResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SelectObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketAclRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketCorsRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketEncryptionRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketInventoryConfigurationRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketLifecycleRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketLoggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketPaymentRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketPolicyRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketQosInfoRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketRefererRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketStorageCapacityRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketVersioningRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetBucketWebsiteRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetObjectAclRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetObjectAclResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetObjectTaggingRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\SetObjectTaggingResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\Tagging.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\UploadObjectRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\UploadPartCopyRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\UploadPartCopyResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\UploadPartRequest.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\model\VoidResult.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\utils\Executor.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\utils\Outcome.h" />
+    <ClInclude Include="..\..\sdk\include\alibabacloud\oss\utils\Runnable.h" />
+    <ClCompile Include="..\..\sdk\src\OssClient.cc" />
+    <ClCompile Include="..\..\sdk\src\OssClientImpl.cc" />
+    <ClCompile Include="..\..\sdk\src\OssRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\OssResponse.cc" />
+    <ClCompile Include="..\..\sdk\src\OssResult.cc" />
+    <ClCompile Include="..\..\sdk\src\ServiceRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\auth\Credentials.cc" />
+    <ClCompile Include="..\..\sdk\src\auth\CredentialsProvider.cc" />
+    <ClCompile Include="..\..\sdk\src\auth\HmacSha1Signer.cc" />
+    <ClCompile Include="..\..\sdk\src\auth\Signer.cc" />
+    <ClCompile Include="..\..\sdk\src\auth\SimpleCredentialsProvider.cc" />
+    <ClCompile Include="..\..\sdk\src\client\AsyncCallerContext.cc" />
+    <ClCompile Include="..\..\sdk\src\client\Client.cc" />
+    <ClCompile Include="..\..\sdk\src\client\ClientConfiguration.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\Cipher.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\CipherOpenssl.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\ContentCryptoMaterial.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\CryptoConfiguration.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\CryptoModule.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\CryptoStreamBuf.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\EncryptionMaterials.cc" />
+    <ClCompile Include="..\..\sdk\src\encryption\OssEncryptionClient.cc" />
+    <ClCompile Include="..\..\sdk\src\external\json\jsoncpp.cpp" />
+    <ClCompile Include="..\..\sdk\src\external\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="..\..\sdk\src\http\CurlHttpClient.cc" />
+    <ClCompile Include="..\..\sdk\src\http\HttpClient.cc" />
+    <ClCompile Include="..\..\sdk\src\http\HttpMessage.cc" />
+    <ClCompile Include="..\..\sdk\src\http\HttpRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\http\HttpResponse.cc" />
+    <ClCompile Include="..\..\sdk\src\http\Url.cc" />
+    <ClCompile Include="..\..\sdk\src\model\AbortBucketWormRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\AbortMultipartUploadRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\AppendObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\AppendObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\Bucket.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CompleteBucketWormRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CompleteMultipartUploadRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CompleteMultipartUploadResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CopyObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CopyObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CreateBucketRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CreateSelectObjectMetaRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CreateSelectObjectMetaResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CreateSymlinkRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\CreateSymlinkResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketCorsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketEncryptionRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketInventoryConfigurationRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketLifecycleRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketLoggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketPolicyRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketQosInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteBucketWebsiteRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteLiveChannelRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectVersionsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectVersionsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\DeleteObjectsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ExtendBucketWormRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GeneratePresignedUrlRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GenerateRTMPSignedUrlRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketAclRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketAclResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketCorsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketCorsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketEncryptionRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketEncryptionResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketInfoResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketInventoryConfigurationRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketInventoryConfigurationResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLifecycleRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLifecycleResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLocationRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLocationResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLoggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketLoggingResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketPaymentRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketPaymentResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketPolicyRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketPolicyResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketQosInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketQosInfoResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketRefererRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketRefererResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketStatRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketStatResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketStorageCapacityRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketStorageCapacityResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketTaggingResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketVersioningRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketVersioningResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketWebsiteRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketWebsiteResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketWormRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetBucketWormResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelHistoryRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelHistoryResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelInfoResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelStatRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetLiveChannelStatResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectAclRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectAclResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectByUrlRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectMetaRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetObjectTaggingResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetSymlinkRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetSymlinkResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetUserQosInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetUserQosInfoResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetVodPlaylistRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\GetVodPlaylistResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InitiateBucketWormRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InitiateBucketWormResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InitiateMultipartUploadRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InitiateMultipartUploadResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InputFormat.cc" />
+    <ClCompile Include="..\..\sdk\src\model\InventoryConfiguration.cc" />
+    <ClCompile Include="..\..\sdk\src\model\LifecycleRule.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListBucketInventoryConfigurationsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListBucketInventoryConfigurationsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListBucketsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListBucketsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListLiveChannelRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListLiveChannelResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListMultipartUploadsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListMultipartUploadsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListObjectVersionsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListObjectsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListObjectsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListObjectsV2Request.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListObjectsV2Result.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListPartsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ListPartsResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ModelError.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ObjectCallbackBuilder.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ObjectMetaData.cc" />
+    <ClCompile Include="..\..\sdk\src\model\OutputFormat.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PostVodPlaylistRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\ProcessObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutLiveChannelRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutLiveChannelResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutLiveChannelStatusRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutObjectByUrlRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\PutObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\RestoreObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\RestoreObjectResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SelectObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketAclRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketCorsRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketEncryptionRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketInventoryConfigurationRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketLifecycleRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketLoggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketPaymentRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketPolicyRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketQosInfoRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketRefererRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketStorageCapacityRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketVersioningRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetBucketWebsiteRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetObjectAclRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetObjectAclResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\SetObjectTaggingRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\Tagging.cc" />
+    <ClCompile Include="..\..\sdk\src\model\UploadPartCopyRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\model\UploadPartCopyResult.cc" />
+    <ClCompile Include="..\..\sdk\src\model\UploadPartRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\DownloadObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\MultiCopyObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\ResumableBaseWorker.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\ResumableCopier.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\ResumableDownloader.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\ResumableUploader.cc" />
+    <ClCompile Include="..\..\sdk\src\resumable\UploadObjectRequest.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\Crc32.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\Crc64.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\Executor.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\FileSystemUtils.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\LogUtils.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\Runnable.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\SignUtils.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\ThreadExecutor.cc" />
+    <ClCompile Include="..\..\sdk\src\utils\Utils.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZERO_CHECK.vcxproj">
+      <Project>{C4125D96-F089-34E4-8BA0-3F0A2C24C2AC}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

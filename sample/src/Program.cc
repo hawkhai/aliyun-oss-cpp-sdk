@@ -28,7 +28,7 @@ void LogCallbackFunc(LogLevel level, const std::string &stream)
     std::cout << stream;
 }
 
-int main(void)
+int mainz(void)
 {
     std::cout << "oss-cpp-sdk samples" << std::endl;
     std::string bucketName = "<YourBucketName>";

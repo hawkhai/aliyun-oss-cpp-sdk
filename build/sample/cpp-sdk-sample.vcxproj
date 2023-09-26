@@ -322,7 +322,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\sample\src\Config.cc" />
+    <ClCompile Include="infoss.cpp" />
     <ClInclude Include="..\..\sample\src\Config.h" />
+    <ClInclude Include="infoss.h" />
     <None Include="..\..\sample\src\LiveChannel">
     </None>
     <ClCompile Include="..\..\sample\src\Program.cc" />

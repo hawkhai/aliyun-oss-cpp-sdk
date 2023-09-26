@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\sample\src\encryption\EncryptionSample.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="infoss.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sample\src\Config.h">
@@ -48,6 +49,7 @@
     <ClInclude Include="..\..\sample\src\encryption\EncryptionSample.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="infoss.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\sample\CMakeLists.txt" />

@@ -9,6 +9,7 @@ using namespace AlibabaCloud::OSS;
 #include <string>
 #include <Windows.h>
 #include "..\..\..\..\cppx\cppx\include\funclib.h"
+#include "..\..\..\..\cppx\cppx\include\KMD5.h"
 
 #undef GetObject
 #undef CreateDirectory
@@ -35,7 +36,7 @@ std::string& replace_str(std::string& str, const std::string& to_replaced, const
 //int main(int argc, char** argv)
 int main(int argc, char** argv)
 {
-    std::string signid;
+    std::string buildid;
     bool input = false;
     std::regex regexStr("^[0-9]{8}\\.[0-9]+$");
     std::smatch matchResult;
@@ -43,19 +44,19 @@ int main(int argc, char** argv)
         std::string inputData = argv[i];
         if (std::regex_match(inputData, matchResult, regexStr)) {
             for (auto ele : matchResult) {
-                signid = ele;
+                buildid = ele;
                 input = false;
             }
         }
     }
-    while (signid.empty()) {
-        std::cout << "请输入构建 ID（形如“20230926.7”的字符串）：" << std::endl;
+    while (buildid.empty()) {
+        std::cout << "请输入构建 ID（形如“20230927.33”的字符串）：" << std::endl;
         std::string inputData;
         std::getline(std::cin, inputData);
 
         if (std::regex_match(inputData, matchResult, regexStr)) {
             for (auto ele : matchResult) {
-                signid = ele;
+                buildid = ele;
                 input = true;
             }
         }
@@ -88,7 +89,7 @@ int main(int argc, char** argv)
         }
     }
 
-    std::string targetdir = "install/" + signid + "/";
+    std::string targetdir = "install/" + buildid + "/";
     if (true) {
         ListObjectsV2Request request(INFOSS_BUCKET);
         request.setMaxKeys(1000); // 一次拉完。
@@ -99,7 +100,6 @@ int main(int argc, char** argv)
             auto count = result.KeyCount();
             auto objs = result.ObjectSummarys();
             for (auto obj : objs) {
-                printf("下载文件 %s\r\n", obj.Key().c_str());
 
                 std::string fdir = obj.Key();
                 int index = -1;
@@ -109,6 +109,17 @@ int main(int argc, char** argv)
                     auto temp = AlibabaCloud::OSS::CreateDirectory(fdir);
                     assert(temp);
                 }
+                if (PathFileExistsA(obj.Key().c_str())) {
+                    KMD5 kmd5;
+                    std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(obj.Key().c_str()).c_str());
+                    std::transform(md5.begin(), md5.end(), md5.begin(), ::toupper); // 将小写的都转换成大写
+                    if (md5 == A2W_ANSI(obj.ETag().c_str())) {
+                        printf("校验通过 %s\r\n", obj.Key().c_str());
+                        continue;
+                    }
+                }
+
+                printf("下载文件 %s\r\n", obj.Key().c_str());
                 auto status = client.GetObject(INFOSS_BUCKET, obj.Key(), obj.Key());
                 assert(status.isSuccess());
             }
@@ -121,7 +132,7 @@ int main(int argc, char** argv)
         printf("ok（按回车结束）");
         getchar();
 
-        std::wstring target = L" /select, install\\" + A2W_ANSI(signid.c_str()) + L"\\ ";
+        std::wstring target = L" /select, install\\" + A2W_ANSI(buildid.c_str()) + L"\\ ";
 
         SHELLEXECUTEINFO shex = { 0 };
         shex.cbSize = sizeof(SHELLEXECUTEINFO);

@@ -23,7 +23,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C4125D96-F089-34E4-8BA0-3F0A2C24C2AC}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>ZERO_CHECK</ProjectName>

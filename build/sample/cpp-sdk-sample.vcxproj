@@ -294,27 +294,27 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\base64.cpp" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\cargs.c" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\funclib.cpp" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\KMD5.cpp" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\mytools.cpp" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.cpp" />
-    <ClCompile Include="..\..\..\..\cppx\cppx\include\zfile.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\base64.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\cargs.c" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\funclib.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\KMD5.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\mytools.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\ReleaseHelper.cpp" />
+    <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\zfile.cpp" />
     <ClCompile Include="..\..\sample\src\Config.cc" />
     <ClCompile Include="infoss.cpp" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\base64.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\cargs.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\funclib.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\json.hpp" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\KLocker.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\KMD5.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\KSingle.hpp" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\mytools.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\myzlib.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\ReleaseHelper.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\ThreadPool.h" />
-    <ClInclude Include="..\..\..\..\cppx\cppx\include\zfile.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\base64.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\cargs.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\funclib.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\json.hpp" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\KLocker.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\KMD5.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\KSingle.hpp" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\mytools.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\myzlib.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\ReleaseHelper.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\ThreadPool.h" />
+    <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\zfile.h" />
     <ClInclude Include="..\..\sample\src\Config.h" />
     <ClInclude Include="infoss.h" />
     <None Include="..\..\sample\src\LiveChannel">

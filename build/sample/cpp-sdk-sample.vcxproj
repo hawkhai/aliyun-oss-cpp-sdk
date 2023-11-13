@@ -103,12 +103,12 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions);WIN32;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";CURL_STATICLIB;NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PLATFORM_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -147,14 +147,14 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR="Release";CURL_STATICLIB;NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR=\"Release\";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -193,13 +193,13 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR="MinSizeRel";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR=\"MinSizeRel\";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -239,11 +239,11 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR="RelWithDebInfo";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;CMAKE_INTDIR=\"RelWithDebInfo\";NOMINMAX;PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>

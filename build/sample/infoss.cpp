@@ -1,4 +1,5 @@
 #include <alibabacloud/oss/OssClient.h>
+#undef WIN32_LEAN_AND_MEAN
 #include <..\..\sdk\src\utils\FileSystemUtils.h>
 using namespace AlibabaCloud::OSS;
 
@@ -8,8 +9,8 @@ using namespace AlibabaCloud::OSS;
 #include <regex>
 #include <string>
 #include <Windows.h>
-#include "..\..\..\..\cppx\cppx\include\funclib.h"
-#include "..\..\..\..\cppx\cppx\include\KMD5.h"
+#include "cppx\funclib.h"
+#include "cppx\KMD5.h"
 
 #undef GetObject
 #undef CreateDirectory
@@ -101,7 +102,10 @@ int main(int argc, char** argv)
             auto objs = result.ObjectSummarys();
             for (auto obj : objs) {
 
-                std::string fdir = obj.Key();
+                std::string objkey = obj.Key(); // utf8
+                std::string lobalfile = UTF8_TO_ANSI(objkey);
+
+                std::string fdir = lobalfile;
                 int index = -1;
                 if ((index = fdir.rfind('/')) != -1) {
                     fdir = fdir.substr(0, index);
@@ -109,18 +113,18 @@ int main(int argc, char** argv)
                     auto temp = AlibabaCloud::OSS::CreateDirectory(fdir);
                     assert(temp);
                 }
-                if (PathFileExistsA(obj.Key().c_str())) {
+                if (PathFileExistsA(lobalfile.c_str())) {
                     KMD5 kmd5;
-                    std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(obj.Key().c_str()).c_str());
+                    std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(lobalfile.c_str()).c_str());
                     std::transform(md5.begin(), md5.end(), md5.begin(), ::toupper); // 将小写的都转换成大写
                     if (md5 == A2W_ANSI(obj.ETag().c_str())) {
-                        printf("校验通过 %s\r\n", obj.Key().c_str());
+                        printf("校验通过 %s\r\n", lobalfile.c_str());
                         continue;
                     }
                 }
 
-                printf("下载文件 %s\r\n", obj.Key().c_str());
-                auto status = client.GetObject(INFOSS_BUCKET, obj.Key(), obj.Key());
+                printf("下载文件 %s\r\n", lobalfile.c_str());
+                auto status = client.GetObject(INFOSS_BUCKET, objkey, lobalfile);
                 assert(status.isSuccess());
             }
         }

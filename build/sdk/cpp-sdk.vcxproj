@@ -79,7 +79,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\curl-8.3.0\include;..\..\..\..\cppx\cppx\openssl-1.1.1w\include;..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -108,13 +108,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Lib>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
+      <AdditionalOptions>/machine:x64 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\curl-8.3.0\include;..\..\..\..\cppx\cppx\openssl-1.1.1w\include;..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -143,13 +143,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Lib>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
+      <AdditionalOptions>/machine:x64 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -178,13 +178,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Lib>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
+      <AdditionalOptions>/machine:x64 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\sdk\include;..\..\sdk\include\alibabacloud\oss;..\..\sdk\src\external;..\..\third_party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -212,7 +212,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Lib>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
+      <AdditionalOptions>/machine:x64 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

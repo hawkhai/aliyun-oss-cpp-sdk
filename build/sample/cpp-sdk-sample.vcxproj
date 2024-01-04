@@ -90,7 +90,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -122,7 +122,7 @@
     <Link>
       <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mtd.lib;..\lib\Debug\alibabacloud-oss-cpp-sdk.lib;advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winspool.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>Debug/cpp-sdk-sample.lib</ImportLibrary>
@@ -136,7 +136,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -168,7 +168,7 @@
     <Link>
       <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mt.lib;..\lib\Release\alibabacloud-oss-cpp-sdk.lib;advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winspool.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>Release/cpp-sdk-sample.lib</ImportLibrary>
@@ -182,7 +182,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -213,7 +213,7 @@
     <Link>
       <AdditionalDependencies>..\..\third_party\lib\x64\libcurl.lib;..\..\third_party\lib\x64\libeay32.lib;..\..\third_party\lib\x64\ssleay32.lib;..\lib\MinSizeRel\alibabacloud-oss-cpp-sdk.lib;advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winspool.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>MinSizeRel/cpp-sdk-sample.lib</ImportLibrary>
@@ -227,7 +227,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11</AdditionalOptions>
+      <AdditionalOptions>/we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047 %(AdditionalOptions) -std=c++11 /we4723</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -257,7 +257,7 @@
     <Link>
       <AdditionalDependencies>..\..\third_party\lib\x64\libcurl.lib;..\..\third_party\lib\x64\libeay32.lib;..\..\third_party\lib\x64\ssleay32.lib;..\lib\RelWithDebInfo\alibabacloud-oss-cpp-sdk.lib;advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winspool.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64 /we4723 /we4715 /we4013 /we4431 /we4133 /we4716 /we4457 /we4456 /we4172 /we4700 /we4477 /we4047</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>RelWithDebInfo/cpp-sdk-sample.lib</ImportLibrary>

@@ -36,12 +36,16 @@ std::string& replace_str(std::string& str, const std::string& to_replaced, const
 }
 
 bool CreateAllDirectories(const std::string& path) {
-    std::string temp;
+
     size_t pos = 0;
 
+    std::string pathk = path;
+    pathk = replace_str(pathk, "/", "\\");
+    pathk = replace_str(pathk, "\\\\", "\\");
+
     // 遍历路径中的每个目录
-    while ((pos = path.find(L'\\', pos)) != std::string::npos) {
-        temp = path.substr(0, pos);
+    while ((pos = pathk.find(L'\\', pos)) != std::string::npos) {
+        std::string temp = pathk.substr(0, pos);
 
         // 尝试创建目录
         if (!CreateDirectoryA(temp.c_str(), NULL)) {
@@ -84,10 +88,12 @@ bool CopyLargeFile(const char* srcPath, const char* dstPath) {
     DWORD bytesRead = 0;
     DWORD bytesWritten = 0;
 
+    bool error = false;
     while (ReadFile(hSrcFile, buffer, BUFFER_SIZE, &bytesRead, NULL) && bytesRead > 0) {
         WriteFile(hDstFile, buffer, bytesRead, &bytesWritten, NULL);
         if (bytesWritten != bytesRead) {
             std::cerr << "WriteFile failed: " << GetLastError() << std::endl;
+            error = true;
             break;
         }
     }
@@ -96,36 +102,40 @@ bool CopyLargeFile(const char* srcPath, const char* dstPath) {
     CloseHandle(hSrcFile);
     CloseHandle(hDstFile);
 
-    return true;
+    return !error;
 }
 
 //+ fmd5	"F269BC66EC5D497BAB9F328EEDEB5639"	std::string
-//+ lobalfile	"install/20231001.1/bin/models/caj2pdf32_1-2.7z"	std::string
+//+ localfile	"install/20231001.1/bin/models/caj2pdf32_1-2.7z"	std::string
 //+ objkey	"install/20231001.1/bin/models/caj2pdf32_1-2.7z"	std::string
-bool evSearch(int64_t fsize, std::string fmd5, std::string objkey, std::string lobalfile) {
+bool evSearch(int64_t fsize, std::string fmd5, std::string objkey, std::string localfile) {
 
     auto index = objkey.find_last_of('/');
     if (index == -1) {
         return false;
     }
 
-    objkey = objkey.substr(index + 1);
+    objkey = "\\" + objkey.substr(index + 1);
     Everything_SetSearchW(A2W_ANSI(objkey.c_str()).c_str());
     if (!Everything_QueryW(TRUE)) {
         return false;
     }
 
-    for (int i = 0; i < Everything_GetNumResults(); i++)
+    int count = Everything_GetNumResults();
+    for (int i = 0; i < count && i < 100; i++)
     {
-        std::wstring fpath = Everything_GetResultFileNameW(i);
+        wchar_t buffer[1024] = { 0 };
+        auto len = Everything_GetResultFullPathNameW(i, buffer, 1024);
+        std::wstring fpath = buffer;
         if (getFileSize(W2A_ANSI(fpath.c_str()).c_str()) != fsize) {
             continue;
         }
         KMD5 kmd5;
-        std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(lobalfile.c_str()).c_str());
+        std::wstring md5 = kmd5.GetMD5Str(fpath.c_str());
         std::transform(md5.begin(), md5.end(), md5.begin(), ::toupper); // 将小写的都转换成大写
         if (md5 == A2W_ANSI(fmd5.c_str())) {
-            if (CopyLargeFile(W2A_ANSI(fpath.c_str()).c_str(), lobalfile.c_str())) {
+            printf("Everything Search %s\r\n", W2A_ANSI(fpath.c_str()).c_str());
+            if (CopyLargeFile(W2A_ANSI(fpath.c_str()).c_str(), localfile.c_str())) {
                 return true;
             }
         }
@@ -203,9 +213,9 @@ int main(int argc, char** argv)
             for (auto obj : objs) {
 
                 std::string objkey = obj.Key(); // utf8
-                std::string lobalfile = UTF8_TO_ANSI(objkey);
+                std::string localfile = UTF8_TO_ANSI(objkey);
 
-                std::string fdir = lobalfile;
+                std::string fdir = localfile;
                 int index = -1;
                 if ((index = fdir.rfind('/')) != -1) {
                     fdir = fdir.substr(0, index);
@@ -213,23 +223,23 @@ int main(int argc, char** argv)
                     auto temp = AlibabaCloud::OSS::CreateDirectory(fdir);
                     assert(temp);
                 }
-                if (PathFileExistsA(lobalfile.c_str())) {
+                if (PathFileExistsA(localfile.c_str())) {
                     KMD5 kmd5;
-                    std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(lobalfile.c_str()).c_str());
+                    std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(localfile.c_str()).c_str());
                     std::transform(md5.begin(), md5.end(), md5.begin(), ::toupper); // 将小写的都转换成大写
                     if (md5 == A2W_ANSI(obj.ETag().c_str())) {
-                        printf("校验通过 %s\r\n", lobalfile.c_str());
+                        printf("校验通过 %s\r\n", localfile.c_str());
                         continue;
                     }
                 }
 
-                if (evSearch(obj.Size(), obj.ETag(), objkey, lobalfile)) {
-                    printf("本机命中 %s\r\n", lobalfile.c_str());
+                if (evSearch(obj.Size(), obj.ETag(), objkey, localfile)) {
+                    printf("本机命中 %s\r\n", localfile.c_str());
                     continue;
                 }
 
-                printf("下载文件 %s\r\n", lobalfile.c_str());
-                auto status = client.GetObject(INFOSS_BUCKET, objkey, lobalfile);
+                printf("下载文件 %s\r\n", localfile.c_str());
+                auto status = client.GetObject(INFOSS_BUCKET, objkey, localfile);
                 assert(status.isSuccess());
             }
         }

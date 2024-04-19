@@ -89,7 +89,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\..\7zipfile\Everything-SDK\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -120,8 +120,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mtd.lib;..\lib\Debug\alibabacloud-oss-cpp-sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mtd.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mtd.lib;..\lib\Debug\alibabacloud-oss-cpp-sdk.lib;sdk.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\7zipfile\Everything-SDK\vs\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/machine:x64 %(AdditionalOptions)</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -135,7 +135,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\cppx\cppx\include;..\..\..\7zipfile\Everything-SDK\include;..\..\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-std=c++11 /we4013 /we4047 /we4133 /we4172 /we4431 /we4456 /we4457 /we4477 /we4700 /we4715 /we4716 /we4723 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -166,8 +166,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mt.lib;..\lib\Release\alibabacloud-oss-cpp-sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libapps-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcrypto-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libcurlx64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libssl-1_1-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libtestutil-static_64mt.lib;..\..\..\..\cppx\cppx\openssl-1.1.1w\libs\libz-static_64mt.lib;..\lib\Release\alibabacloud-oss-cpp-sdk.lib;sdk.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\7zipfile\Everything-SDK\vs\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/machine:x64 %(AdditionalOptions)</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -305,6 +305,7 @@
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\mytools.cpp" />
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\ReleaseHelper.cpp" />
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\zfile.cpp" />
+    <ClCompile Include="..\..\..\7zipfile\Everything-SDK\src\Everything.cpp" />
     <ClCompile Include="..\..\sample\src\Config.cc" />
     <ClCompile Include="infoss.cpp" />
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\base64.h" />
@@ -319,6 +320,7 @@
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\ReleaseHelper.h" />
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\ThreadPool.h" />
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\zfile.h" />
+    <ClInclude Include="..\..\..\7zipfile\Everything-SDK\include\Everything.h" />
     <ClInclude Include="..\..\sample\src\Config.h" />
     <ClInclude Include="infoss.h" />
     <None Include="..\..\sample\src\LiveChannel">

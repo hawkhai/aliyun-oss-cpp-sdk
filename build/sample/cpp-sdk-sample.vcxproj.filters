@@ -47,6 +47,9 @@
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\zfile.cpp">
       <Filter>cppx</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\7zipfile\Everything-SDK\src\Everything.cpp">
+      <Filter>Everything</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sample\src\Config.h">
@@ -107,6 +110,9 @@
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\zfile.h">
       <Filter>cppx</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\7zipfile\Everything-SDK\include\Everything.h">
+      <Filter>Everything</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\sample\CMakeLists.txt" />
@@ -128,6 +134,9 @@
     </Filter>
     <Filter Include="cppx">
       <UniqueIdentifier>{4e57cf04-892d-4bba-bf92-78a5ea847437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Everything">
+      <UniqueIdentifier>{b9c74e14-f8ec-45b8-ba3f-d0e36527ada0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

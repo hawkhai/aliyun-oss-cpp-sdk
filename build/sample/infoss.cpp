@@ -11,6 +11,7 @@ using namespace AlibabaCloud::OSS;
 #include <Windows.h>
 #include "cppx\funclib.h"
 #include "cppx\KMD5.h"
+#include "Everything.h"
 
 #undef GetObject
 #undef CreateDirectory
@@ -32,6 +33,105 @@ std::string& replace_str(std::string& str, const std::string& to_replaced, const
             break;
     }
     return str;
+}
+
+bool CreateAllDirectories(const std::string& path) {
+    std::string temp;
+    size_t pos = 0;
+
+    // 遍历路径中的每个目录
+    while ((pos = path.find(L'\\', pos)) != std::string::npos) {
+        temp = path.substr(0, pos);
+
+        // 尝试创建目录
+        if (!CreateDirectoryA(temp.c_str(), NULL)) {
+            // 如果目录已经存在，则继续
+            if (GetLastError() != ERROR_ALREADY_EXISTS) {
+                std::cerr << "CreateDirectory failed: " << GetLastError() << std::endl;
+                return false;
+            }
+        }
+
+        // 移动到下一个目录的起始位置
+        pos++;
+    }
+
+    return true;
+}
+
+bool CopyLargeFile(const char* srcPath, const char* dstPath) {
+    HANDLE hSrcFile = CreateFileA(srcPath, //
+        GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hSrcFile == INVALID_HANDLE_VALUE) {
+        std::cerr << "CreateFile failed: " << GetLastError() << std::endl;
+        return false;
+    }
+
+    if (!CreateAllDirectories(dstPath)) {
+        return false;
+    }
+
+    HANDLE hDstFile = CreateFileA(dstPath, //
+        GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hDstFile == INVALID_HANDLE_VALUE) {
+        std::cerr << "CreateFile failed: " << GetLastError() << std::endl;
+        CloseHandle(hSrcFile);
+        return false;
+    }
+
+    const DWORD BUFFER_SIZE = 1024 * 1024; // 1MB buffer
+    BYTE* buffer = new BYTE[BUFFER_SIZE];
+    DWORD bytesRead = 0;
+    DWORD bytesWritten = 0;
+
+    while (ReadFile(hSrcFile, buffer, BUFFER_SIZE, &bytesRead, NULL) && bytesRead > 0) {
+        WriteFile(hDstFile, buffer, bytesRead, &bytesWritten, NULL);
+        if (bytesWritten != bytesRead) {
+            std::cerr << "WriteFile failed: " << GetLastError() << std::endl;
+            break;
+        }
+    }
+
+    delete[] buffer;
+    CloseHandle(hSrcFile);
+    CloseHandle(hDstFile);
+
+    return true;
+}
+
+//+ fmd5	"F269BC66EC5D497BAB9F328EEDEB5639"	std::string
+//+ lobalfile	"install/20231001.1/bin/models/caj2pdf32_1-2.7z"	std::string
+//+ objkey	"install/20231001.1/bin/models/caj2pdf32_1-2.7z"	std::string
+bool evSearch(int64_t fsize, std::string fmd5, std::string objkey, std::string lobalfile) {
+
+    auto index = objkey.find_last_of('/');
+    if (index == -1) {
+        return false;
+    }
+
+    objkey = objkey.substr(index + 1);
+    Everything_SetSearchW(A2W_ANSI(objkey.c_str()).c_str());
+    if (!Everything_QueryW(TRUE)) {
+        return false;
+    }
+
+    for (int i = 0; i < Everything_GetNumResults(); i++)
+    {
+        std::wstring fpath = Everything_GetResultFileNameW(i);
+        if (getFileSize(W2A_ANSI(fpath.c_str()).c_str()) != fsize) {
+            continue;
+        }
+        KMD5 kmd5;
+        std::wstring md5 = kmd5.GetMD5Str(A2W_ANSI(lobalfile.c_str()).c_str());
+        std::transform(md5.begin(), md5.end(), md5.begin(), ::toupper); // 将小写的都转换成大写
+        if (md5 == A2W_ANSI(fmd5.c_str())) {
+            if (CopyLargeFile(W2A_ANSI(fpath.c_str()).c_str(), lobalfile.c_str())) {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }
 
 //int main(int argc, char** argv)
@@ -121,6 +221,11 @@ int main(int argc, char** argv)
                         printf("校验通过 %s\r\n", lobalfile.c_str());
                         continue;
                     }
+                }
+
+                if (evSearch(obj.Size(), obj.ETag(), objkey, lobalfile)) {
+                    printf("本机命中 %s\r\n", lobalfile.c_str());
+                    continue;
                 }
 
                 printf("下载文件 %s\r\n", lobalfile.c_str());

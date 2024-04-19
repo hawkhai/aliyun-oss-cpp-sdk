@@ -47,9 +47,6 @@
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\zfile.cpp">
       <Filter>cppx</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\7zipfile\Everything-SDK\src\Everything.cpp">
-      <Filter>Everything</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sample\src\Config.h">

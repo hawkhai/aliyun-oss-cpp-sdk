@@ -305,7 +305,6 @@
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\mytools.cpp" />
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\ReleaseHelper.cpp" />
     <ClCompile Include="..\..\..\..\cppx\cppx\include\cppx\zfile.cpp" />
-    <ClCompile Include="..\..\..\7zipfile\Everything-SDK\src\Everything.cpp" />
     <ClCompile Include="..\..\sample\src\Config.cc" />
     <ClCompile Include="infoss.cpp" />
     <ClInclude Include="..\..\..\..\cppx\cppx\include\cppx\base64.h" />

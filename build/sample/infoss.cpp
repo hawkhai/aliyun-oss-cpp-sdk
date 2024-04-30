@@ -149,11 +149,18 @@ int main(int argc, char** argv)
 {
     std::string buildid;
     bool input = false;
-    std::regex regexStr("^[0-9]{8}\\.[0-9]+$");
+    std::regex regexStr1("^[0-9]{8}\\.[0-9]+$");
+    std::regex regexStr2("^[0-9]{8}\\.[0-9]+\\.[A-F0-9a-f]+$");
     std::smatch matchResult;
     for (int i = 1; i < argc; i++) {
         std::string inputData = argv[i];
-        if (std::regex_match(inputData, matchResult, regexStr)) {
+        if (std::regex_match(inputData, matchResult, regexStr1)) {
+            for (auto ele : matchResult) {
+                buildid = ele;
+                input = false;
+            }
+        }
+        if (std::regex_match(inputData, matchResult, regexStr2)) {
             for (auto ele : matchResult) {
                 buildid = ele;
                 input = false;
@@ -161,11 +168,17 @@ int main(int argc, char** argv)
         }
     }
     while (buildid.empty()) {
-        std::cout << "请输入构建 ID（形如“20230927.33”的字符串）：" << std::endl;
+        std::cout << "请输入构建 ID（形如“20240430.141.d4eea86078”的字符串）：" << std::endl;
         std::string inputData;
         std::getline(std::cin, inputData);
 
-        if (std::regex_match(inputData, matchResult, regexStr)) {
+        if (std::regex_match(inputData, matchResult, regexStr1)) {
+            for (auto ele : matchResult) {
+                buildid = ele;
+                input = true;
+            }
+        }
+        if (std::regex_match(inputData, matchResult, regexStr2)) {
             for (auto ele : matchResult) {
                 buildid = ele;
                 input = true;
